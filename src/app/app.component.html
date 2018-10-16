@@ -1,0 +1,33 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center" class="container">
+  <img class="mt-5" width="200" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  <input #agregarTareaInput type="text" class="form-control text-center mt-3" (keyup.enter)="agregarTarea()" [(ngModel)]="textoTarea">
+
+  <!-- Tareas -->
+
+  <div class="list-group mt-4">
+    <div href="#" class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let tarea of tareas">
+      <div class="d-flex w-100 justify-content-between">
+        <input type="checkbox" class="form-control checkTarea mt-2" [checked]="tarea.estado === 'COMPLETADA'" (change)="cambiarEstadoTarea(tarea)">
+        <h5 class="pt-2" [class.tachar]="tarea.estado === 'COMPLETADA'">{{tarea.texto}}</h5>
+        <i class="fas fa-toilet-paper pt-3" (click)="eliminarTarea(tarea)"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- FIN TAREAS -->
+
+  <!-- FILTROS -->
+  <div class="btn-group btn-group-toggle mt-4 row" style="width: 100%" data-toggle="buttons">
+    <label class="btn btn-lg btn-filtro col-md-4" [class.active]="filtroActivo === 'TODAS'" (click)="filtrar('TODAS')">
+      <input type="radio" name="options" id="option1" autocomplete="off" checked> Todas
+    </label>
+    <label class="btn btn-lg btn-filtro col-md-4" [class.active]="filtroActivo === 'POR COMPLETAR'" (click)="filtrar('POR COMPLETAR')">
+      <input type="radio" name="options" id="option2" autocomplete="off"> Por completar
+    </label>
+    <label class="btn btn-lg btn-filtro col-md-4" [class.active]="filtroActivo === 'COMPLETADAS'" (click)="filtrar('COMPLETADAS')">
+      <input type="radio" name="options" id="option3" autocomplete="off" (click)="filtrarCompletadas()"> Completadas
+    </label>
+  </div>
+</div>
+

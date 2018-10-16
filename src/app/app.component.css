@@ -1,0 +1,48 @@
+.container {
+  width: 750px;
+}
+
+.container .form-control{
+  border-radius: 0px;
+  background-color: #182C61;
+  border-color: transparent;
+  color: #F8EFBA;
+}
+
+.list-group-item {
+  border-radius: 0px;
+  background-color: #182C61;
+  color: #F8EFBA;
+}
+
+.list-group-item.active{
+  background-color: #1B9CFC;
+}
+
+small {
+  width: 10px;
+}
+
+.btn-filtro{
+  color: #fff;
+  background-color: #6D214F;
+  border-radius: 0px;
+  border-color: #6D214F;
+}
+
+.btn-filtro.active{
+  color: #fff;
+  border-radius: 0px;
+  background-color: #B33771;
+  border-color: #B33771;
+}
+
+.checkTarea {
+  width: 20px;
+  height: 20px;
+}
+
+.tachar{
+  text-decoration:line-through;
+}
+
